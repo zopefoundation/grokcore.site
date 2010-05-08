@@ -1,6 +1,6 @@
 ##############################################################################
 #
-# Copyright (c) 2006-2009 Zope Foundation and Contributors.
+# Copyright (c) 2007-2008 Zope Foundation and Contributors.
 # All Rights Reserved.
 #
 # This software is subject to the provisions of the Zope Public License,
@@ -11,13 +11,14 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
+"""Grok test helpers
+"""
+from zope.configuration.config import ConfigurationMachine
+from grokcore.component import zcml
 
-
-from grokcore.component import *
-from grokcore.site.directive import local_utility
-from grokcore.site.components import Site, LocalUtility
-
-import grokcore.site.testing
-
-from grokcore.site.interfaces import IGrokcoreSiteAPI
-__all__ = list(IGrokcoreSiteAPI)
+def grok(module_name):
+    config = ConfigurationMachine()
+    zcml.do_grok('grokcore.component.meta', config)
+    zcml.do_grok('grokcore.site.meta', config)
+    zcml.do_grok(module_name, config)
+    config.execute_actions()
