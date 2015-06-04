@@ -29,15 +29,19 @@ import grokcore.site
 from zope import interface
 from zope.container.btree import BTreeContainer
 
+
 class IFireplace(interface.Interface):
     pass
 
+
 class Fireplace(grokcore.site.LocalUtility):
     interface.implements(IFireplace)
-    
+
+
 class Cave(BTreeContainer, grokcore.site.Site):
     grokcore.site.local_utility(Fireplace, public=True,
                                 name_in_container='fireplace')
+
 
 class Cave2(BTreeContainer, grokcore.site.Site):
     grokcore.site.local_utility(Fireplace, public=False,

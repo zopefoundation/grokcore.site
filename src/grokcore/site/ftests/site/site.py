@@ -23,7 +23,7 @@ While manfred and herd are possible sites, they are not yet sites;
   False
   >>> ISite.providedBy(herd)
   False
-  
+
 When a site is added to a container it will be initialized as a site
 (when the ObjectAddedEvent is fired):
 
@@ -38,14 +38,18 @@ import grokcore.site
 from persistent import Persistent
 from zope.container.btree import BTreeContainer
 
+
 class Mammoth(grokcore.site.Site):
     pass
+
 
 class Herd(grokcore.site.Site):
     pass
 
+
 class NonSite(Persistent):
     pass
+
 
 class NonSiteContainer(BTreeContainer):
     pass

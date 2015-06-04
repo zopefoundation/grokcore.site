@@ -15,7 +15,7 @@ Subclassed sites inherit all local utilities of their base classes:
   True
 
 Additional utilities can be registered in the subclass:
-  
+
   >>> hollow = HollowCave()
   >>> getRootFolder()["hollow"] = hollow
 
@@ -67,17 +67,22 @@ times through different routes:
 import grokcore.site
 from zope import interface
 
+
 class IFireplace(interface.Interface):
     pass
+
 
 class IPainting(interface.Interface):
     pass
 
+
 class Fireplace(grokcore.site.LocalUtility):
     interface.implements(IFireplace)
 
+
 class Painting(grokcore.site.LocalUtility):
     interface.implements(IPainting)
+
 
 class Cave(grokcore.site.Site):
     # we use name_in_container here to prevent multiple registrations
@@ -85,17 +90,20 @@ class Cave(grokcore.site.Site):
     # would raise a DuplicationError
     grokcore.site.local_utility(Fireplace, name_in_container='fireplace')
 
+
 class BigCave(Cave):
     pass
 
+
 class HollowCave(Cave):
     grokcore.site.local_utility(Painting)
+
 
 class VeryHollowCave(HollowCave):
     grokcore.site.local_utility(Painting, name='great')
     grokcore.site.local_utility(Painting, name='bad')
 
+
 # this cave subclasses from Cave twice
 class ScaryCave(VeryHollowCave, Cave):
     pass
-

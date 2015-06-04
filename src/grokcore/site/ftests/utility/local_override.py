@@ -21,18 +21,22 @@ grok.local_utility:
 import grokcore.site
 from zope import interface
 
+
 class IClub(interface.Interface):
     pass
+
 
 class Club(grokcore.site.LocalUtility):
     interface.implements(IClub)
 
+
 class SpikyClub(grokcore.site.LocalUtility):
     interface.implements(IClub)
+
 
 class Cave(grokcore.site.Site):
     grokcore.site.local_utility(Club)
 
+
 class SpikyCave(Cave):
     grokcore.site.local_utility(SpikyClub)
-

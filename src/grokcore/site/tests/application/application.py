@@ -5,7 +5,7 @@ available as a utility::
 
     >>> from grokcore.site import testing
     >>> testing.grok(__name__)
-    
+
     >>> import zope.component
     >>> import grokcore.site.interfaces
     >>> calendar_app = zope.component.getUtility(

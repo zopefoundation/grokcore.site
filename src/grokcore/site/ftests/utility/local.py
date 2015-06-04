@@ -93,43 +93,56 @@ import grokcore.site
 from zope import interface
 import persistent
 
+
 class IFireplace(interface.Interface):
     pass
+
 
 class IClub(interface.Interface):
     pass
 
+
 class ISpiky(interface.Interface):
     pass
+
 
 class IMammoth(interface.Interface):
     pass
 
+
 class Fireplace(grokcore.site.LocalUtility):
     interface.implements(IFireplace)
+
 
 class Club(object):
     interface.implements(IClub)
 
+
 class SpikyClub(object):
     interface.implements(IClub, ISpiky)
 
+
 class Mammoth(grokcore.site.LocalUtility):
     interface.implements(IMammoth, IClub)
+
 
 class SabretoothTiger(grokcore.site.LocalUtility):
     interface.implements(IMammoth, IClub)
     grokcore.site.provides(IMammoth)
 
+
 class IPainting(persistent.interfaces.IPersistent):
     pass
+
 
 class CavePainting(grokcore.site.LocalUtility):
     interface.implements(IPainting)
 
+
 class ColoredCavePainting(grokcore.site.LocalUtility):
     interface.implements(IPainting)
     grokcore.site.provides(IPainting)
+
 
 class Cave(grokcore.site.Site):
     grokcore.site.local_utility(Fireplace)
@@ -137,5 +150,6 @@ class Cave(grokcore.site.Site):
     grokcore.site.local_utility(SpikyClub, provides=IClub, name='spiky')
     grokcore.site.local_utility(Mammoth, provides=IMammoth)
     grokcore.site.local_utility(SabretoothTiger, name='tiger')
-    grokcore.site.local_utility(CavePainting, name='blackandwhite', provides=IPainting)
+    grokcore.site.local_utility(
+        CavePainting, name='blackandwhite', provides=IPainting)
     grokcore.site.local_utility(ColoredCavePainting, name='color')
