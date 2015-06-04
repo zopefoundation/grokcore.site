@@ -22,19 +22,18 @@ class IApplication(Interface):
     """
 
 
-class IApplicationInitializedEvent(IObjectEvent):
-    """A Grok Application has been created with success and is now ready
-    to be used.
+class IApplicationAddedEvent(IObjectEvent):
+    """A Grok Application has been added with success.
 
     This event can be used to trigger the creation of contents or other tasks
-    that require the application to be fully operational : utilities installed
+    that require the application to be fully there : utilities installed
     and indexes created in the catalog."""
 
 
-class ApplicationInitializedEvent(object):
-    """A Grok Application has been created and is now ready to be used.
+class ApplicationAddedEvent(object):
+    """A Grok Application has been added.
     """
-    implements(IApplicationInitializedEvent)
+    implements(IApplicationAddedEvent)
 
     def __init__(self, app):
         assert IApplication.providedBy(app)
@@ -90,10 +89,10 @@ class IGrokcoreSiteAPI(IGrokcoreComponentAPI, IBaseClasses, IDirectives):
 
     IApplication = Attribute('The application model interface')
 
-    IApplicationInitializedEvent = Attribute(
+    IApplicationAddedEvent = Attribute(
         'The application initialized event interface')
 
-    ApplicationInitializedEvent = Attribute(
+    ApplicationAddedEvent = Attribute(
         'The application initialized event factory')
 
     def getSite():

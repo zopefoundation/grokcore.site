@@ -12,11 +12,11 @@
 #
 ##############################################################################
 
-import grokcore.site
-from grokcore.site.interfaces import IApplication, ApplicationInitializedEvent
-from zope.component.hooks import getSite
+from grokcore.site.interfaces import IApplication, ApplicationAddedEvent
+from zope.component.hooks import getSite, setSite
 from zope.event import notify
 from zope.lifecycleevent import ObjectCreatedEvent
+from zope.schema.interfaces import WrongType
 
 
 def getApplication():
@@ -42,7 +42,8 @@ def create_application(factory, container, name):
     the application lifecycle.
     """
     # Check the factory.
-    assert IApplication.implementedBy(factory)
+    if not IApplication.implementedBy(factory):
+        raise WrongType(factory)
 
     # Check the availability of the name in the container.
     if name in container:
@@ -58,7 +59,13 @@ def create_application(factory, container, name):
     # This may raise a KeyError.
     container[name] = application
 
-    # Trigger the initialization event.
-    notify(ApplicationInitializedEvent(application))
+    # Trigger the initialization event with the new application as a
+    # current site.
+    current = getSite()
+    setSite(application)
+    try:
+        notify(ApplicationAddedEvent(application))
+    finally:
+        setSite(current)
 
     return application

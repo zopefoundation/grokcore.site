@@ -8,6 +8,12 @@ Changes
   directive let you customize when (namely the event) to install the
   configured local sites.
 
+- Rename ``ApplicationInitializedEvent`` to ``ApplicationAddedEvent``.
+
+- When the ``IApplicationAddedEvent`` is triggered the new application
+  will be current Zope local site. The site is restored after the
+  event.
+
 
 1.6.1 (2012-05-02)
 ------------------

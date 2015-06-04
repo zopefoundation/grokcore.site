@@ -21,8 +21,8 @@ from grokcore.site.util import getApplication
 import grokcore.site.testing
 
 from grokcore.site.interfaces import IApplication
-from grokcore.site.interfaces import IApplicationInitializedEvent
-from grokcore.site.interfaces import ApplicationInitializedEvent
+from grokcore.site.interfaces import IApplicationAddedEvent
+from grokcore.site.interfaces import ApplicationAddedEvent
 
 from grokcore.site.interfaces import IGrokcoreSiteAPI
 __all__ = list(IGrokcoreSiteAPI)

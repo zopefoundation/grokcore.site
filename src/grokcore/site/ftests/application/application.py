@@ -12,6 +12,7 @@ Let's create an application, then get it using grok.getApplication():
   >>> import grokcore.site
   >>> import zope.site.hooks
   >>> root = getRootFolder()
+
   >>> app = grokcore.site.util.create_application(Cave, root, 'mycave')
   >>> root['cave'] = app
   >>> zope.site.hooks.setSite(app)
@@ -36,6 +37,14 @@ But when we call grokcore.site.util.getApplication() we get the cave:
 
   >>> grokcore.site.getApplication()
   <grokcore.site.ftests.application.application.Cave object at ...>
+
+If you try to create an application that is not valid it will fail:
+
+  >>> grokcore.site.util.create_application(object(), root, 'myobject')
+  Traceback (most recent call last):
+    ...
+  WrongType: ...
+
 
 """
 import grokcore.content
