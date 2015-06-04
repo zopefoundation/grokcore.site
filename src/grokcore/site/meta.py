@@ -31,8 +31,9 @@ class SiteGrokker(martian.ClassGrokker):
     martian.component(grokcore.site.components.BaseSite)
     martian.priority(500)
     martian.directive(grokcore.site.local_utility, name='infos')
+    martian.directive(grokcore.site.install_on, default=IObjectAddedEvent)
 
-    def execute(self, factory, config, infos, **kw):
+    def execute(self, factory, config, infos, install_on, **kw):
         if not infos:
             return False
 
@@ -48,7 +49,7 @@ class SiteGrokker(martian.ClassGrokker):
         # site class. They will be picked up by a subscriber doing the
         # actual registrations in definition order.
         factory.__grok_utilities_to_install__ = sorted(infos)
-        adapts = (factory, IObjectAddedEvent)
+        adapts = (factory, install_on)
 
         config.action(
             discriminator=None,

@@ -61,7 +61,7 @@ class LocalUtility(Contained, Persistent):
 
     Defines a utility that will be registered local to a :class:`Site`
     or :class:`grok.Application`.
-    
+
     Although application developers can create local utilies without
     actually subclassing :class:`LocalUtility`, they gain three
     benefits from doing so.  First, their code is more readable

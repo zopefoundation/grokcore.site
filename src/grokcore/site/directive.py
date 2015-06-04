@@ -35,6 +35,16 @@ class site(martian.Directive):
     validate = martian.validateInterfaceOrClass
 
 
+class install_on(martian.Directive):
+    """This directive is used to indicate the event that will listened to
+    on the Grok site in order to install the component. By default
+    that would be ObjectAddedEvent.
+    """
+    scope = martian.CLASS
+    store = martian.ONCE
+    validate = martian.validateInterface
+
+
 class local_utility(martian.Directive):
     """The `grokcore.site.local_utility()` directive.
 

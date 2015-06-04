@@ -4,7 +4,9 @@ Changes
 1.7 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add a new directive ``install_on`` that is usable on a site. This
+  directive let you customize when (namely the event) to install the
+  configured local sites.
 
 
 1.6.1 (2012-05-02)
@@ -75,4 +77,3 @@ Changes
 
 * Created ``grokcore.site`` by factoring local site based components,
   grokkers and directives out of Grok.
-
