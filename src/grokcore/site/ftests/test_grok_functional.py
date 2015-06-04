@@ -21,14 +21,15 @@ def suiteFromPackage(name):
         test = doctest.DocTestSuite(
             dottedname,
             extraglobs=dict(getRootFolder=FunctionalLayer.getRootFolder),
-            optionflags=(doctest.ELLIPSIS+
-                         doctest.NORMALIZE_WHITESPACE+
+            optionflags=(doctest.ELLIPSIS +
+                         doctest.NORMALIZE_WHITESPACE +
                          doctest.REPORT_NDIFF)
             )
         test.layer = FunctionalLayer
 
         suite.addTest(test)
     return suite
+
 
 def test_suite():
     suite = unittest.TestSuite()
