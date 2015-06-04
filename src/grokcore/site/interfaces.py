@@ -76,6 +76,10 @@ class IDirectives(Interface):
         name_in_container - the name to use for storing the utility
         """
 
+    def install_on(event):
+        """Explicitly specify when a local utility will be installed.
+        """
+
     def provides(interface):
         """Explicitly specify with which interface a component will be
         looked up."""
