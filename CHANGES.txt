@@ -1,7 +1,7 @@
 Changes
 =======
 
-1.7 (unreleased)
+1.7 (2015-06-11)
 ----------------
 
 - Add a new directive ``install_on`` that is usable on a site. This
