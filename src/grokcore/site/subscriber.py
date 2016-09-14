@@ -29,9 +29,6 @@ def addSiteHandler(site, event):
     `grokcore.site.Site` instance is added to a container.  It creates
     a local site manager and installs it on the newly created site.
     """
-    if event.oldParent is not None:
-        # We were moving the site.
-        return
     sitemanager = LocalSiteManager(site)
     # LocalSiteManager creates the 'default' folder in its __init__.
     # It's not needed anymore in new versions of Zope 3, therefore we
@@ -42,9 +39,6 @@ def addSiteHandler(site, event):
 
 @grokcore.component.subscribe(Site, IObjectRemovedEvent)
 def removeSiteHandler(site, event):
-    if event.newParent is not None:
-        # We were moving the site.
-        return
     local = site.getSiteManager()
     parent = _findNextSiteManager(site)
     if parent is not None:
