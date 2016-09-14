@@ -4,7 +4,8 @@ Changes
 1.8 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- When removing a site make sure reference are removed from the parent
+  site.
 
 
 1.7.1 (2016-01-29)
