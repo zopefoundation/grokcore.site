@@ -1,7 +1,7 @@
 Changes
 =======
 
-1.8 (unreleased)
+1.8 (2016-09-21)
 ----------------
 
 - When removing a site make sure reference are removed from the parent
