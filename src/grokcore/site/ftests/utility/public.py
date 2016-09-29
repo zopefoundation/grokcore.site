@@ -34,8 +34,9 @@ class IFireplace(interface.Interface):
     pass
 
 
+@interface.implementer(IFireplace)
 class Fireplace(grokcore.site.LocalUtility):
-    interface.implements(IFireplace)
+    pass
 
 
 class Cave(BTreeContainer, grokcore.site.Site):

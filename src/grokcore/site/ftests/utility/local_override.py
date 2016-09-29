@@ -15,8 +15,13 @@ grok.local_utility:
   >>> isinstance(club, SpikyClub)
   True
 
-  >>> list(cave.getSiteManager().keys())
-  [u'SpikyClub']
+  >>> names = list(cave.getSiteManager().keys())
+  >>> len(names)
+  1
+
+  >>> print(names[0])
+  SpikyClub
+
 """
 import grokcore.site
 from zope import interface
@@ -26,12 +31,14 @@ class IClub(interface.Interface):
     pass
 
 
+@interface.implementer(IClub)
 class Club(grokcore.site.LocalUtility):
-    interface.implements(IClub)
+    pass
 
 
+@interface.implementer(IClub)
 class SpikyClub(grokcore.site.LocalUtility):
-    interface.implements(IClub)
+    pass
 
 
 class Cave(grokcore.site.Site):

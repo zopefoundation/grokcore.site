@@ -20,7 +20,7 @@ grok.local_utility but only on grok.install_on:
   True
 """
 import grokcore.site
-from zope.interface import Interface, implements
+from zope.interface import Interface, implementer
 from zope.component.interfaces import ObjectEvent, IObjectEvent
 
 
@@ -28,16 +28,18 @@ class IPartyEvent(IObjectEvent):
     pass
 
 
+@implementer(IPartyEvent)
 class PartyEvent(ObjectEvent):
-    implements(IPartyEvent)
+    pass
 
 
 class IClub(Interface):
     pass
 
 
+@implementer(IClub)
 class Club(grokcore.site.LocalUtility):
-    implements(IClub)
+    pass
 
 
 class Cave(grokcore.site.Site):

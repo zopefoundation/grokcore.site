@@ -38,7 +38,7 @@ Those do not influence the base class:
   >>> painting = component.getUtility(IPainting)
   Traceback (most recent call last):
     ...
-  ComponentLookupError: (<InterfaceClass grokcore.site.ftests.utility.subclass.IPainting>, '')
+  zope.interface.interfaces.ComponentLookupError: (<InterfaceClass grokcore.site.ftests.utility.subclass.IPainting>, '')
 
 This works various levels of inheritance deep:
 
@@ -76,12 +76,14 @@ class IPainting(interface.Interface):
     pass
 
 
+@interface.implementer(IFireplace)
 class Fireplace(grokcore.site.LocalUtility):
-    interface.implements(IFireplace)
+    pass
 
 
+@interface.implementer(IPainting)
 class Painting(grokcore.site.LocalUtility):
-    interface.implements(IPainting)
+    pass
 
 
 class Cave(grokcore.site.Site):
