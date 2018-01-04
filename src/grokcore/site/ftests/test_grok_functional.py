@@ -27,11 +27,11 @@ def suiteFromPackage(name):
             dottedname,
             checker=checker,
             extraglobs=dict(getRootFolder=FunctionalLayer.getRootFolder),
-            optionflags=(doctest.ELLIPSIS +
-                         doctest.NORMALIZE_WHITESPACE +
-                         doctest.REPORT_NDIFF +
-                         renormalizing.EXCEPTION_2TO3)
-            )
+            optionflags=(
+                doctest.ELLIPSIS +
+                doctest.NORMALIZE_WHITESPACE +
+                doctest.REPORT_NDIFF +
+                renormalizing.IGNORE_EXCEPTION_MODULE_IN_PYTHON2))
         test.layer = FunctionalLayer
 
         suite.addTest(test)
