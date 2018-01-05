@@ -155,7 +155,7 @@ class LocalUtilityInfo(object):
         self.order = LocalUtilityInfo._order
         LocalUtilityInfo._order += 1
 
-    def __cmp__(self, other):
+    def __lt__(self, other):
         # LocalUtilityInfos have an inherit sort order by which the
         # registrations take place.
-        return cmp(self.order, other.order)
+        return self.order < other.order

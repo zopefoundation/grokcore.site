@@ -43,8 +43,7 @@ If you try to create an application that is not valid it will fail:
   >>> grokcore.site.util.create_application(object(), root, 'myobject')
   Traceback (most recent call last):
     ...
-  WrongType: ...
-
+  zope.schema._bootstrapinterfaces.WrongType: ...
 
 """
 import grokcore.content

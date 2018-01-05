@@ -17,7 +17,7 @@ from grokcore.component.interfaces import IContext
 from grokcore.site.interfaces import IApplication
 from zope.annotation.interfaces import IAttributeAnnotatable
 from zope.container.contained import Contained
-from zope.interface import implements
+from zope.interface import implementer
 from zope.site.site import SiteManagerContainer
 
 
@@ -41,6 +41,7 @@ class Site(BaseSite, SiteManagerContainer):
     """
 
 
+@implementer(IApplication)
 class Application(Site):
     """Mixin for creating Grok application objects.
 
@@ -53,9 +54,9 @@ class Application(Site):
     that the admin can install directly at the root of their Zope
     database.
     """
-    implements(IApplication)
 
 
+@implementer(IContext, IAttributeAnnotatable)
 class LocalUtility(Contained, Persistent):
     """The base class for local utilities in Grok applications.
 
@@ -76,4 +77,3 @@ class LocalUtility(Contained, Persistent):
     case Grok cannot tell them apart, and `grok.provides()` must be
     used explicitly anyway).
     """
-    implements(IContext, IAttributeAnnotatable)

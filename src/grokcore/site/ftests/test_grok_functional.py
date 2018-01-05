@@ -3,9 +3,14 @@ import unittest
 from pkg_resources import resource_listdir
 
 from zope.app.appsetup.testlayer import ZODBLayer
+from zope.testing import renormalizing
+
 import grokcore.site
 
 FunctionalLayer = ZODBLayer(grokcore.site)
+
+
+checker = renormalizing.RENormalizing([])
 
 
 def suiteFromPackage(name):
@@ -20,11 +25,13 @@ def suiteFromPackage(name):
         dottedname = 'grokcore.site.ftests.%s.%s' % (name, filename[:-3])
         test = doctest.DocTestSuite(
             dottedname,
+            checker=checker,
             extraglobs=dict(getRootFolder=FunctionalLayer.getRootFolder),
-            optionflags=(doctest.ELLIPSIS +
-                         doctest.NORMALIZE_WHITESPACE +
-                         doctest.REPORT_NDIFF)
-            )
+            optionflags=(
+                doctest.ELLIPSIS +
+                doctest.NORMALIZE_WHITESPACE +
+                doctest.REPORT_NDIFF +
+                renormalizing.IGNORE_EXCEPTION_MODULE_IN_PYTHON2))
         test.layer = FunctionalLayer
 
         suite.addTest(test)

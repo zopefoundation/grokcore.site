@@ -12,7 +12,7 @@
 #
 ##############################################################################
 
-from zope.interface import Interface, Attribute, implements
+from zope.interface import Interface, Attribute, implementer
 from zope.component.interfaces import IObjectEvent
 from grokcore.component.interfaces import IGrokcoreComponentAPI
 
@@ -30,10 +30,10 @@ class IApplicationAddedEvent(IObjectEvent):
     and indexes created in the catalog."""
 
 
+@implementer(IApplicationAddedEvent)
 class ApplicationAddedEvent(object):
     """A Grok Application has been added.
     """
-    implements(IApplicationAddedEvent)
 
     def __init__(self, app):
         assert IApplication.providedBy(app)
