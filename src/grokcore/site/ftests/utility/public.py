@@ -8,7 +8,7 @@ be controlled using name_in_container:
   >>> getRootFolder()["cave"] = cave
 
   >>> from zope import component
-  >>> from zope.site.hooks import getSite, setSite
+  >>> from zope.component.hooks import getSite, setSite
   >>> setSite(cave)
   >>> cave['fireplace'] is component.getUtility(IFireplace)
   True
