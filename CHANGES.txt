@@ -1,7 +1,7 @@
 Changes
 =======
 
-3.0.2 (unreleased)
+3.0.2 (2018-01-11)
 ------------------
 
 - Do not import `getSite` from `zope.site.hooks` anymore but from
