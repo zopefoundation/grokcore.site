@@ -10,12 +10,12 @@ will walk up the tree until it reaches the top-level site object.
 Let's create an application, then get it using grok.getApplication():
 
   >>> import grokcore.site
-  >>> import zope.site.hooks
+  >>> import zope.component.hooks
   >>> root = getRootFolder()
 
   >>> app = grokcore.site.util.create_application(Cave, root, 'mycave')
   >>> root['cave'] = app
-  >>> zope.site.hooks.setSite(app)
+  >>> zope.component.hooks.setSite(app)
   >>> grokcore.site.getApplication()
   <grokcore.site.ftests.application.application.Cave object at ...>
 
@@ -29,7 +29,7 @@ Now we can create a container with a sub-site. When we call grok.getSite()
 we'll get the box:
 
   >>> root['cave']['box'] = WoodBox()
-  >>> zope.site.hooks.setSite(root['cave']['box'])
+  >>> zope.component.hooks.setSite(root['cave']['box'])
   >>> getSite()
   <grokcore.site.ftests.application.application.WoodBox object at ...>
 

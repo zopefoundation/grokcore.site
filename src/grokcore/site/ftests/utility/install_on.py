@@ -6,7 +6,7 @@ grok.local_utility but only on grok.install_on:
   >>> getRootFolder()['cave'] = cave
 
   >>> from zope.component import queryUtility
-  >>> from zope.site.hooks import setSite
+  >>> from zope.component.hooks import setSite
   >>> from zope.event import notify
   >>> setSite(cave)
 
