@@ -10,6 +10,6 @@
   <include package="grokcore.site" file="meta.zcml" />
   <include package="grokcore.site" />
 
-  <grok:grok package="grokcore.site.ftests" />
+  <grok:grok package="grokcore.site.tests.functional" />
 
 </configure>

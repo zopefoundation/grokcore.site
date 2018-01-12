@@ -17,13 +17,13 @@ Let's create an application, then get it using grok.getApplication():
   >>> root['cave'] = app
   >>> zope.component.hooks.setSite(app)
   >>> grokcore.site.getApplication()
-  <grokcore.site.ftests.application.application.Cave object at ...>
+  <grokcore.site.tests.functional.application.application.Cave object at ...>
 
 Or get it using getSite():
 
   >>> from zope.component.hooks import getSite
   >>> getSite()
-  <grokcore.site.ftests.application.application.Cave object at ...>
+  <grokcore.site.tests.functional.application.application.Cave object at ...>
 
 Now we can create a container with a sub-site. When we call grok.getSite()
 we'll get the box:
@@ -31,12 +31,12 @@ we'll get the box:
   >>> root['cave']['box'] = WoodBox()
   >>> zope.component.hooks.setSite(root['cave']['box'])
   >>> getSite()
-  <grokcore.site.ftests.application.application.WoodBox object at ...>
+  <grokcore.site.tests.functional.application.application.WoodBox object at ...>
 
 But when we call grokcore.site.util.getApplication() we get the cave:
 
   >>> grokcore.site.getApplication()
-  <grokcore.site.ftests.application.application.Cave object at ...>
+  <grokcore.site.tests.functional.application.application.Cave object at ...>
 
 If you try to create an application that is not valid it will fail:
 
