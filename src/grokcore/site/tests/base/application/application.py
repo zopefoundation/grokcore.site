@@ -10,10 +10,10 @@ available as a utility::
     >>> import grokcore.site.interfaces
     >>> calendar_app = zope.component.getUtility(
     ...     grokcore.site.interfaces.IApplication,
-    ...     name='grokcore.site.tests.application.application.Calendar')
+    ...     name='grokcore.site.tests.base.application.application.Calendar')
 
     >>> calendar_app
-    <class 'grokcore.site.tests.application.application.Calendar'>
+    <class 'grokcore.site.tests.base.application.application.Calendar'>
 
 Applications are both containers and sites::
 
@@ -24,7 +24,7 @@ Applications can be instanciated without any arguments::
 
     >>> calendar = calendar_app()
     >>> calendar
-    <grokcore.site.tests.application.application.Calendar object at 0x...>
+    <grokcore.site.tests.base.application.application.Calendar object at 0x...>
 
 """
 
