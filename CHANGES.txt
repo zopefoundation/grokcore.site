@@ -4,8 +4,7 @@ Changes
 3.0.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Fix DeprecationWarnings.
 
 3.0.3 (2018-01-12)
 ------------------

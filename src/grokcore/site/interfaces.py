@@ -13,7 +13,7 @@
 ##############################################################################
 
 from zope.interface import Interface, Attribute, implementer
-from zope.component.interfaces import IObjectEvent
+from zope.interface.interfaces import IObjectEvent
 from grokcore.component.interfaces import IGrokcoreComponentAPI
 
 

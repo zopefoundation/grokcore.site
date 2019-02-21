@@ -21,7 +21,7 @@ grok.local_utility but only on grok.install_on:
 """
 import grokcore.site
 from zope.interface import Interface, implementer
-from zope.component.interfaces import ObjectEvent, IObjectEvent
+from zope.interface.interfaces import ObjectEvent, IObjectEvent
 
 
 class IPartyEvent(IObjectEvent):
