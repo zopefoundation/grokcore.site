@@ -4,7 +4,9 @@ Changes
 3.0.4 (unreleased)
 ------------------
 
-- Fix `DeprecationWarnings.
+- Fix DeprecationWarnings.
+
+- Drop support for Python 3.4 and add support for 3.7 and 3.8.
 
 3.0.3 (2018-01-12)
 ------------------
