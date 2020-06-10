@@ -57,37 +57,49 @@ Since it is a local utility, it is not available outside its site:
   >>> component.getUtility(IFireplace)
   Traceback (most recent call last):
     ...
-  zope.interface.interfaces.ComponentLookupError: (<InterfaceClass grokcore.site.tests.functional.utility.local.IFireplace>, '')
+  zope.interface.interfaces.ComponentLookupError: (<InterfaceClass
+  grokcore.site.tests.functional.utility.local.IFireplace>, '')
 
   >>> component.getUtility(IClub)
   Traceback (most recent call last):
     ...
-  zope.interface.interfaces.ComponentLookupError: (<InterfaceClass grokcore.site.tests.functional.utility.local.IClub>, '')
+  zope.interface.interfaces.ComponentLookupError:
+  (<InterfaceClass grokcore.site.tests.functional.utility.local.IClub>, '')
 
   >>> component.getUtility(IClub, name='spiky')
   Traceback (most recent call last):
     ...
-  zope.interface.interfaces.ComponentLookupError: (<InterfaceClass grokcore.site.tests.functional.utility.local.IClub>, 'spiky')
+  zope.interface.interfaces.ComponentLookupError:
+  (<InterfaceClass grokcore.site.tests.functional.utility.local.IClub>,
+  'spiky')
 
   >>> component.getUtility(IMammoth)
   Traceback (most recent call last):
     ...
-  zope.interface.interfaces.ComponentLookupError: (<InterfaceClass grokcore.site.tests.functional.utility.local.IMammoth>, '')
+  zope.interface.interfaces.ComponentLookupError:
+  (<InterfaceClass grokcore.site.tests.functional.utility.local.IMammoth>,
+  '')
 
   >>> component.getUtility(IMammoth, name='tiger')
   Traceback (most recent call last):
     ...
-  zope.interface.interfaces.ComponentLookupError: (<InterfaceClass grokcore.site.tests.functional.utility.local.IMammoth>, 'tiger')
+  zope.interface.interfaces.ComponentLookupError:
+  (<InterfaceClass grokcore.site.tests.functional.utility.local.IMammoth>,
+  'tiger')
 
   >>> component.getUtility(IPainting, name='blackandwhite')
   Traceback (most recent call last):
     ...
-  zope.interface.interfaces.ComponentLookupError: (<InterfaceClass grokcore.site.tests.functional.utility.local.IPainting>, 'blackandwhite')
+  zope.interface.interfaces.ComponentLookupError:
+  (<InterfaceClass grokcore.site.tests.functional.utility.local.IPainting>,
+  'blackandwhite')
 
   >>> component.getUtility(IPainting, name='color')
   Traceback (most recent call last):
     ...
-  zope.interface.interfaces.ComponentLookupError: (<InterfaceClass grokcore.site.tests.functional.utility.local.IPainting>, 'color')
+  zope.interface.interfaces.ComponentLookupError:
+  (<InterfaceClass grokcore.site.tests.functional.utility.local.IPainting>,
+  'color')
 """
 import grokcore.site
 from zope import interface

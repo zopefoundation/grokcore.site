@@ -31,7 +31,8 @@ we'll get the box:
   >>> root['cave']['box'] = WoodBox()
   >>> zope.component.hooks.setSite(root['cave']['box'])
   >>> getSite()
-  <grokcore.site.tests.functional.application.application.WoodBox object at ...>
+  <grokcore.site.tests.functional.application.application.WoodBox
+  object at ...>
 
 But when we call grokcore.site.util.getApplication() we get the cave:
 

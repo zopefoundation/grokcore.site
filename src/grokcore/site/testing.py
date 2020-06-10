@@ -16,6 +16,7 @@
 from zope.configuration.config import ConfigurationMachine
 from grokcore.component import zcml
 
+
 def grok(module_name):
     config = ConfigurationMachine()
     zcml.do_grok('grokcore.component.meta', config)
