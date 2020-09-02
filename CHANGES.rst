@@ -1,8 +1,8 @@
 Changes
 =======
 
-3.0.4 (unreleased)
-------------------
+3.1 (2020-09-02)
+----------------
 
 - Fix DeprecationWarnings.
 
@@ -17,7 +17,7 @@ Changes
 ------------------
 
 - Do not import `getSite` from `zope.site.hooks` anymore but from
-  `zope.component.hooks.
+  `zope.component.hooks`.
 
 3.0.1 (2018-01-10)
 ------------------
