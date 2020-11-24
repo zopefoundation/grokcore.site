@@ -59,7 +59,7 @@ setup(
                       'zope.interface',
                       'zope.lifecycleevent',
                       'zope.schema',
-                      'zope.site',
+                      'zope.site >= 4.4',
                       ],
     tests_require=tests_require,
     extras_require={'test': tests_require},

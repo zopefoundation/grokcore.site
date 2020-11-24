@@ -13,9 +13,7 @@
 ##############################################################################
 
 from zope.lifecycleevent.interfaces import IObjectAddedEvent
-from zope.lifecycleevent.interfaces import IObjectRemovedEvent
 from zope.site import LocalSiteManager
-from zope.site.site import _findNextSiteManager
 
 import grokcore.component
 from grokcore.site.components import Site
@@ -30,17 +28,3 @@ def addSiteHandler(site, event):
     sitemanager = LocalSiteManager(site)
     del sitemanager['default']
     site.setSiteManager(sitemanager)
-
-
-@grokcore.component.subscribe(Site, IObjectRemovedEvent)
-def removeSiteHandler(site, event):
-    """Cleanup a after a site was removed.
-    """
-    if event.newParent is not None:
-        # Please note that the code for moving a site is properly implemented
-        # inside zope.site.
-        return
-    local = site.getSiteManager()
-    parent = _findNextSiteManager(site)
-    if parent is not None:
-        parent.removeSub(local)

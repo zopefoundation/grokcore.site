@@ -4,8 +4,8 @@ Changes
 3.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
-
+- Adapt code to ``zope.site >= 4.4`` thus requiring at least that version.
+  (`#7 <https://github.com/zopefoundation/grokcore.site/pull/7>`_)
 
 3.1 (2020-09-02)
 ----------------
