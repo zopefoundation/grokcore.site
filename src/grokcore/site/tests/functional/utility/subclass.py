@@ -63,8 +63,9 @@ times through different routes:
   >>> great_painting = component.getUtility(IPainting, 'great')
   >>> bad_painting = component.getUtility(IPainting, 'bad')
 """  # noqa: E501
-import grokcore.site
 from zope import interface
+
+import grokcore.site
 
 
 class IFireplace(interface.Interface):

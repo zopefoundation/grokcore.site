@@ -89,9 +89,10 @@ Since it is a local utility, it is not available outside its site:
     ...
   zope.interface.interfaces.ComponentLookupError: (<InterfaceClass grokcore.site.tests.functional.utility.local.IPainting>, 'color')
 """  # noqa: E501
-import grokcore.site
-from zope import interface
 import persistent
+from zope import interface
+
+import grokcore.site
 
 
 class IFireplace(interface.Interface):

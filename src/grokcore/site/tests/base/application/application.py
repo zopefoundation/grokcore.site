@@ -20,7 +20,7 @@ Applications are both containers and sites::
     >>> issubclass(calendar_app, grokcore.site.Site)
     True
 
-Applications can be instanciated without any arguments::
+Applications can be instantiated without any arguments::
 
     >>> calendar = calendar_app()
     >>> calendar

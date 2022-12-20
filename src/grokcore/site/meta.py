@@ -12,13 +12,12 @@
 #
 ##############################################################################
 
-from zope import component
-
-from zope.lifecycleevent.interfaces import IObjectAddedEvent
-from zope.container.interfaces import IContainer,  INameChooser
-
 import martian
 from martian.error import GrokError
+from zope import component
+from zope.container.interfaces import IContainer
+from zope.container.interfaces import INameChooser
+from zope.lifecycleevent.interfaces import IObjectAddedEvent
 
 import grokcore.component
 import grokcore.site

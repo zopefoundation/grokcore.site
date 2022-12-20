@@ -19,9 +19,12 @@ grok.local_utility but only on grok.install_on:
   >>> IClub.providedBy(club)
   True
 """
+from zope.interface import Interface
+from zope.interface import implementer
+from zope.interface.interfaces import IObjectEvent
+from zope.interface.interfaces import ObjectEvent
+
 import grokcore.site
-from zope.interface import Interface, implementer
-from zope.interface.interfaces import ObjectEvent, IObjectEvent
 
 
 class IPartyEvent(IObjectEvent):
