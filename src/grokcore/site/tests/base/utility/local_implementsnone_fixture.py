@@ -1,7 +1,7 @@
 import grokcore.site
 
 
-class Fireplace(object):
+class Fireplace:
     pass
 
 

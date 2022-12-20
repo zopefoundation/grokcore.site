@@ -25,9 +25,10 @@ name_in_container can also be used for objects stored under the site manager
 
 """
 
-import grokcore.site
 from zope import interface
 from zope.container.btree import BTreeContainer
+
+import grokcore.site
 
 
 class IFireplace(interface.Interface):

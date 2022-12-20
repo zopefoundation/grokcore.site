@@ -34,9 +34,10 @@ When a site is added to a container it will be initialized as a site
   >>> ISite.providedBy(herd)
   True
 """
-import grokcore.site
 from persistent import Persistent
 from zope.container.btree import BTreeContainer
+
+import grokcore.site
 
 
 class Mammoth(grokcore.site.Site):

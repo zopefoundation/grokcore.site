@@ -1,5 +1,7 @@
-from setuptools import setup, find_packages
 import os
+
+from setuptools import find_packages
+from setuptools import setup
 
 
 def read(*rnames):
@@ -22,7 +24,7 @@ tests_require = [
 
 setup(
     name='grokcore.site',
-    version='3.2.dev0',
+    version='4.0.dev0',
     author='Grok Team',
     author_email='grok-dev@zope.org',
     url='http://grok.zope.org',
@@ -32,16 +34,18 @@ setup(
     license='ZPL',
     classifiers=[
         'Environment :: Web Environment',
+        'Framework :: Zope :: 3',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Zope Public License',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
-        'Framework :: Zope :: 3',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: Implementation :: CPython',
+        'Programming Language :: Python :: Implementation :: PyPy',
+        'Programming Language :: Python',
     ],
     packages=find_packages('src'),
     package_dir={'': 'src'},

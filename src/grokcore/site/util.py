@@ -12,11 +12,14 @@
 #
 ##############################################################################
 
-from grokcore.site.interfaces import IApplication, ApplicationAddedEvent
-from zope.component.hooks import getSite, setSite
+from zope.component.hooks import getSite
+from zope.component.hooks import setSite
 from zope.event import notify
 from zope.lifecycleevent import ObjectCreatedEvent
 from zope.schema.interfaces import WrongType
+
+from grokcore.site.interfaces import ApplicationAddedEvent
+from grokcore.site.interfaces import IApplication
 
 
 def getApplication():

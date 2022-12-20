@@ -13,15 +13,16 @@
 ##############################################################################
 
 from persistent import Persistent
-from grokcore.component.interfaces import IContext
-from grokcore.site.interfaces import IApplication
 from zope.annotation.interfaces import IAttributeAnnotatable
 from zope.container.contained import Contained
 from zope.interface import implementer
 from zope.site.site import SiteManagerContainer
 
+from grokcore.component.interfaces import IContext
+from grokcore.site.interfaces import IApplication
 
-class BaseSite(object):
+
+class BaseSite:
     """Mixin to grok sites in Grok applications.
 
     It's used to let different implementation of sites to exists, and

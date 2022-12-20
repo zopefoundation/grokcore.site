@@ -14,16 +14,14 @@
 """Grok directives.
 """
 
-import grokcore.component
-
-from grokcore.site.components import LocalUtility
-
-from zope import interface
-from zope.interface.interfaces import IInterface
-
 import martian
 from martian import util
 from martian.error import GrokImportError
+from zope import interface
+from zope.interface.interfaces import IInterface
+
+import grokcore.component
+from grokcore.site.components import LocalUtility
 
 
 class site(martian.Directive):
@@ -82,7 +80,7 @@ class local_utility(martian.Directive):
     scope = martian.CLASS
     store = martian.DICT
 
-    def factory(self, factory, provides=None, name=u'',
+    def factory(self, factory, provides=None, name='',
                 setup=None, public=False, name_in_container=None):
         if provides is not None and not IInterface.providedBy(provides):
             raise GrokImportError("You can only pass an interface to the "
@@ -128,7 +126,7 @@ class local_utility(martian.Directive):
         return (provides, name), info
 
 
-class LocalUtilityInfo(object):
+class LocalUtilityInfo:
     """The information about how to register a local utility.
 
     An instance of this class is created for each
@@ -143,7 +141,7 @@ class LocalUtilityInfo(object):
     """
     _order = 0
 
-    def __init__(self, factory, provides, name=u'',
+    def __init__(self, factory, provides, name='',
                  setup=None, public=False, name_in_container=None):
         self.factory = factory
         self.provides = provides

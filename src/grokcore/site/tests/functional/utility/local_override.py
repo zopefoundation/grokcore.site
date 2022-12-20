@@ -22,9 +22,12 @@ grok.local_utility:
   >>> print(names[0])
   SpikyClub
 
+  >>> setSite()
+
 """
-import grokcore.site
 from zope import interface
+
+import grokcore.site
 
 
 class IClub(interface.Interface):

@@ -1,8 +1,12 @@
 Changes
 =======
 
-3.2 (unreleased)
+4.0 (unreleased)
 ----------------
+
+- Drop support for Python 2.7, 3.5, 3.6.
+
+- Add support for Python 3.9, 3.10, 3.11.
 
 - Adapt code to ``zope.site >= 4.4`` thus requiring at least that version.
   (`#7 <https://github.com/zopefoundation/grokcore.site/pull/7>`_)
