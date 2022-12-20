@@ -78,7 +78,7 @@ def localUtilityRegistrationSubscriber(site, event):
 
 
 @grokcore.component.provider(grokcore.site.interfaces.IUtilityInstaller)
-def setupUtility(site, utility, provides, name=u'',
+def setupUtility(site, utility, provides, name='',
                  name_in_container=None, public=False, setup=None):
     """Set up a utility in a site.
 
@@ -122,7 +122,7 @@ class ApplicationGrokker(martian.ClassGrokker):
     def grok(self, name, factory, module_info, config, **kw):
         # XXX fail loudly if the same application name is used twice.
         provides = grokcore.site.interfaces.IApplication
-        name = '%s.%s' % (module_info.dotted_name, name)
+        name = '{}.{}'.format(module_info.dotted_name, name)
         config.action(
             discriminator=('utility', provides, name),
             callable=grokcore.component.provideUtility,

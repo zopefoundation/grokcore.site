@@ -22,7 +22,7 @@ from grokcore.component.interfaces import IContext
 from grokcore.site.interfaces import IApplication
 
 
-class BaseSite(object):
+class BaseSite:
     """Mixin to grok sites in Grok applications.
 
     It's used to let different implementation of sites to exists, and
