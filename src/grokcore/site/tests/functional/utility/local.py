@@ -117,12 +117,12 @@ class Fireplace(grokcore.site.LocalUtility):
 
 
 @interface.implementer(IClub)
-class Club(object):
+class Club:
     pass
 
 
 @interface.implementer(IClub, ISpiky)
-class SpikyClub(object):
+class SpikyClub:
     pass
 
 

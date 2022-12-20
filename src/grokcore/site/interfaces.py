@@ -34,7 +34,7 @@ class IApplicationAddedEvent(IObjectEvent):
 
 
 @implementer(IApplicationAddedEvent)
-class ApplicationAddedEvent(object):
+class ApplicationAddedEvent:
     """A Grok Application has been added.
     """
 
@@ -48,7 +48,7 @@ class IUtilityInstaller(Interface):
     'installation' method if you want (one for Zope2 / Zope3).
     """
 
-    def __call__(site, utility, provides, name=u'',
+    def __call__(site, utility, provides, name='',
                  name_in_container=None, public=False, setup=None):
         """Setup an utility.
         """
@@ -63,7 +63,7 @@ class IBaseClasses(Interface):
 
 
 class IDirectives(Interface):
-    def local_utility(factory, provides=None, name=u'',
+    def local_utility(factory, provides=None, name='',
                       setup=None, public=False, name_in_container=None):
         """Register a local utility.
 
