@@ -54,7 +54,7 @@ class SiteGrokker(martian.ClassGrokker):
             discriminator=None,
             callable=grokcore.component.provideHandler,
             args=(localUtilityRegistrationSubscriber, adapts),
-            )
+        )
         return True
 
 
@@ -122,10 +122,10 @@ class ApplicationGrokker(martian.ClassGrokker):
     def grok(self, name, factory, module_info, config, **kw):
         # XXX fail loudly if the same application name is used twice.
         provides = grokcore.site.interfaces.IApplication
-        name = '{}.{}'.format(module_info.dotted_name, name)
+        name = f'{module_info.dotted_name}.{name}'
         config.action(
             discriminator=('utility', provides, name),
             callable=grokcore.component.provideUtility,
             args=(factory, provides, name),
-            )
+        )
         return True
