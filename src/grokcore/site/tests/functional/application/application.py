@@ -48,6 +48,7 @@ If you try to create an application that is not valid it will fail:
 
 """
 import grokcore.content
+
 import grokcore.site
 
 
