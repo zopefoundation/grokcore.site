@@ -12,10 +12,10 @@
 #
 ##############################################################################
 
+import grokcore.component
 from zope.lifecycleevent.interfaces import IObjectAddedEvent
 from zope.site import LocalSiteManager
 
-import grokcore.component
 from grokcore.site.components import Site
 
 

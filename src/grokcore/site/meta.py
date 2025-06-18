@@ -12,6 +12,7 @@
 #
 ##############################################################################
 
+import grokcore.component
 import martian
 from martian.error import GrokError
 from zope import component
@@ -19,7 +20,6 @@ from zope.container.interfaces import IContainer
 from zope.container.interfaces import INameChooser
 from zope.lifecycleevent.interfaces import IObjectAddedEvent
 
-import grokcore.component
 import grokcore.site
 import grokcore.site.components
 import grokcore.site.interfaces

@@ -12,10 +12,10 @@
 #
 ##############################################################################
 
+from grokcore.component import *  # noqa: F401, F403
 from zope.component.hooks import getSite  # noqa: F401
 
 import grokcore.site.testing  # noqa: F401
-from grokcore.component import *  # noqa: F401, F403
 from grokcore.site.components import Application  # noqa: F401
 from grokcore.site.components import LocalUtility  # noqa: F401
 from grokcore.site.components import Site  # noqa: F401

@@ -14,13 +14,13 @@
 """Grok directives.
 """
 
+import grokcore.component
 import martian
 from martian import util
 from martian.error import GrokImportError
 from zope import interface
 from zope.interface.interfaces import IInterface
 
-import grokcore.component
 from grokcore.site.components import LocalUtility
 
 
