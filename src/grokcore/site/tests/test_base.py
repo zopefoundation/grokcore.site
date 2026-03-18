@@ -1,10 +1,22 @@
 import doctest
 import unittest
-
-from pkg_resources import resource_listdir
+from importlib import import_module
+from importlib.resources import files
 
 import zope.component.eventtesting
 from zope.testing import cleanup
+
+
+def resource_listdir(package_name, resource_path):
+    """List resources in a package subdirectory."""
+    # Get the package from the module name
+    module = import_module(package_name)
+    package = module.__package__ or package_name
+
+    resource = files(package)
+    for part in resource_path.split('/'):
+        resource = resource / part
+    return [item.name for item in resource.iterdir()]
 
 
 def setUpZope(test):
